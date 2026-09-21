@@ -1,8 +1,9 @@
 {
-  "$schema": "./node_modules/wrangler/config-schema.json",
+  "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
   "name": "basitrehman-portfolio",
   "compatibility_date": "2026-09-21",
   "assets": {
-    "directory": "."
+    "directory": ".",
+    "not_found_handling": "404-page"
   }
-}
+} 
