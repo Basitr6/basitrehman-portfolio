@@ -195,13 +195,7 @@ const modalDescription = document.querySelector('#modal-description');
 const modalTag = document.querySelector('#modal-tag');
 const modalCta = document.querySelector('#modal-cta');
 function openProject(card) {
-  const [title, subtitle, description, tag] = card.dataset.project.split('|');
-  modalTitle.textContent = `${title} — ${subtitle}`;
-  modalDescription.textContent = description;
-  modalTag.textContent = tag;
-  modalCta.href = card.dataset.url;
-  projectModal.classList.add('open');
-  projectModal.setAttribute('aria-hidden', 'false');
+  window.location.href = `project.html?id=${encodeURIComponent(card.dataset.category)}`;
 }
 document.querySelectorAll('.project-card').forEach((card) => {
   card.addEventListener('click', () => openProject(card));
@@ -305,3 +299,31 @@ window.addEventListener('resize', () => {
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden && !reduceMotion && !networkFrame) drawNetwork();
 });
+const labNodes = {
+  client: { kicker: 'NODE 01 // CLIENT', title: 'Understand the user path', text: 'I start from the person, workflow or operational pain—not from a tool. That keeps the system useful and measurable.', tags: ['requirements', 'documentation'] },
+  firewall: { kicker: 'NODE 02 // FIREWALL', title: 'Make trust boundaries visible', text: 'I think about what should be allowed, denied and logged. Clear rules reduce risk without making the network impossible to use.', tags: ['ACLs', 'monitoring'] },
+  router: { kicker: 'NODE 03 // ROUTER', title: 'Move traffic deliberately', text: 'Addressing, routing and segmentation turn a collection of devices into an infrastructure that can be diagnosed and scaled.', tags: ['TCP/IP', 'routing'] },
+  server: { kicker: 'NODE 04 // SERVER', title: 'Automate the repeatable work', text: 'Python and Linux help me convert manual checks, reports and operational tasks into repeatable workflows with useful evidence.', tags: ['Python', 'Linux'] },
+  cloud: { kicker: 'NODE 05 // CLOUD', title: 'Design for visibility', text: 'Cloud systems should be understandable after deployment. I value logs, documentation and simple operational handoffs as much as the build.', tags: ['cloud', 'observability'] }
+};
+const coverImages = { python: 'assets/covers/smart-file-organizer.svg', hardware: 'assets/covers/risc-v-simulator.svg', security: 'assets/covers/netsentinel.svg', networking: 'assets/covers/campus-network.svg' };
+document.querySelectorAll('.project-card[data-category]').forEach((card) => {
+  const image = coverImages[card.dataset.category];
+  const visual = card.querySelector('.project-visual');
+  if (!image || !visual || visual.querySelector('.project-cover')) return;
+  const cover = document.createElement('img');
+  cover.className = 'project-cover';
+  cover.src = image;
+  cover.alt = `${card.querySelector('h3')?.textContent || 'Project'} interface preview`;
+  cover.loading = 'lazy';
+  visual.prepend(cover);
+});
+document.querySelectorAll('.lab-node').forEach((node) => node.addEventListener('click', () => {
+  const data = labNodes[node.dataset.node];
+  if (!data) return;
+  document.querySelectorAll('.lab-node').forEach((item) => item.classList.toggle('active', item === node));
+  document.querySelector('#lab-kicker').textContent = data.kicker;
+  document.querySelector('#lab-title').textContent = data.title;
+  document.querySelector('#lab-text').textContent = data.text;
+  document.querySelector('#lab-tags').innerHTML = data.tags.map((tag) => `<span>${tag}</span>`).join('');
+}));
