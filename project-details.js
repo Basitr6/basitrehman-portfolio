@@ -2,8 +2,8 @@ const projectDetails = {
   python: {
     number: '01', title: 'Smart File Organizer', eyebrow: 'Python automation // desktop utility',
     summary: 'A practical Windows desktop tool that turns a messy downloads folder into a predictable, searchable workspace.',
-    problem: 'Manual file sorting is repetitive, error-prone and easy to postpone. The tool needed to organize files without risking duplicates or accidental loss.',
-    solution: 'Built a Tkinter interface around extension-based rules, preview mode, duplicate protection, activity logs and undo/restore workflows.',
+    problem: 'Manual file sorting is repetitive, error prone and easy to postpone. The tool needed to organize files without risking duplicates or accidental loss.',
+    solution: 'Built a Tkinter interface around extension  based rules, preview mode, duplicate protection, activity logs and undo/restore workflows.',
     result: 'A safer local automation workflow with tests, clear feedback and Windows packaging for everyday use.',
     stack: ['Python', 'Tkinter', 'File handling', 'Unit testing'],
     steps: ['Scan and preview', 'Classify by extension', 'Move with duplicate protection', 'Log and restore changes'],
@@ -12,7 +12,7 @@ const projectDetails = {
   },
   hardware: {
     number: '02', title: 'RISC-V Processor Simulator', eyebrow: 'Digital systems // hardware visualization',
-    summary: 'A learning-focused RISC-V environment connecting a custom Verilog core to Python tooling and a browser dashboard.',
+    summary: 'A learning focused RISC-V environment connecting a custom Verilog core to Python tooling and a browser dashboard.',
     problem: 'Processor state can be difficult to understand when it is hidden inside waveforms and raw simulator output.',
     solution: 'Created a Python assembler, Verilog RISC-V core and interactive Flask dashboard for registers, memory and CPU state.',
     result: 'A visual bridge between instruction execution, hardware design and software debugging.',
@@ -23,7 +23,7 @@ const projectDetails = {
   },
   security: {
     number: '03', title: 'NetSentinel', eyebrow: 'Network security // telemetry monitor',
-    summary: 'A desktop security monitor for practical packet inspection, rogue-device visibility and lightweight audit reporting.',
+    summary: 'A desktop security monitor for practical packet inspection, rogue device visibility and lightweight audit reporting.',
     problem: 'Small networks need useful security signals without the complexity of a large enterprise monitoring platform.',
     solution: 'Combined Scapy packet inspection with CustomTkinter views, Layer 4 port checks, ARP spoof detection, vendor caching and CSV reports.',
     result: 'Actionable local network telemetry that helps users identify unexpected devices and suspicious activity.',
@@ -36,7 +36,7 @@ const projectDetails = {
     number: '04', title: 'Campus Network Architecture', eyebrow: 'Cisco networking // infrastructure design',
     summary: 'A secure three-tier campus design for data, voice and IoT services with clear segmentation and routing decisions.',
     problem: 'A campus network must separate traffic, remain resilient and support different service requirements without becoming difficult to operate.',
-    solution: 'Designed VLANs, VLSM addressing, ROAS, multi-area OSPF, ACL firewalls and QoS for VoIP across a Cisco Packet Tracer topology.',
+    solution: 'Designed VLANs, VLSM addressing, ROAS, multi area OSPF, ACL firewalls and QoS for VoIP across a Cisco Packet Tracer topology.',
     result: 'A scalable architecture that demonstrates practical enterprise networking fundamentals from addressing to policy enforcement.',
     stack: ['Cisco', 'Packet Tracer', 'VLANs', 'OSPF / ACL / QoS'],
     steps: ['Plan addressing and VLANs', 'Route between segments', 'Apply security policy', 'Prioritize voice and validate paths'],
